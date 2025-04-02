@@ -1,6 +1,7 @@
 import React from "react";
 import BlurText from "./BlurText";
-import "./Card.css"; // Import the CSS file for font
+import "./Card.css"; 
+import WeatherBar from "./WeatherBar";
 
 const Card = () => {
   return (
@@ -10,7 +11,7 @@ const Card = () => {
           width={328}
           height={328}
           viewBox="0 0 128 128"
-          className="duration-500 border-4 rounded-full shadow-md border-white border-spacing-5 animate-[spin_5s_linear_infinite] transition-all"
+          className="duration-500 border-4 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] border-white border-spacing-5 animate-[spin_5s_linear_infinite] transition-all"
         >
           <rect width={128} height={128} fill="black" />
           <circle cx={20} cy={20} r={2} fill="white" />
@@ -62,25 +63,25 @@ const Card = () => {
             delay={150}
             animateBy="words"
             direction="top"
-            className="text-6xl text-[#321d5c] font-extrabold font-boldonse"
+            className="text-6xl text-[#321d5c] font-extrabold font-boldonse drop-shadow-[0_0_5px_rgba(50,29,92,0.5)]"
           />
         </div>
 
        
 
-        <div className="flex flex-row items-center justify-between mx-3 bg-indigo-100 rounded-md min-h-12 py-2 px-4">
+        {/* <div className="flex flex-row items-center justify-between mx-3 bg-indigo-100 rounded-md min-h-12 py-2 px-4">
           <span className="text-sm text-zinc-600">0:00</span>
           <input
             type="range"
-            min={0}
+            min={1}
             max={100}
             defaultValue={0}
             className="w-24 flex-grow h-1 mx-2 my-auto bg-gray-300 rounded-full appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-zinc-400 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-md"
           />
           <span className="text-sm text-zinc-600">3:45</span>
-        </div>
+        </div> */}
 
-        <div className="flex flex-row items-center justify-center mx-3 space-x-6 mt-6">
+        <div className="flex flex-row items-center justify-center mx-3 space-x-6 mt-2 ">
 
           <div className="flex items-center justify-center w-12 h-full cursor-pointer">
             <svg
@@ -89,11 +90,11 @@ const Card = () => {
               height={24}
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#321d5c"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="feather feather-skip-back"
+              className="feather  feather-skip-back "
             >
               <polygon points="19 20 9 12 19 4 19 20" />
               <line x1={5} y1={19} x2={5} y2={5} />
@@ -116,11 +117,11 @@ const Card = () => {
               height={24}
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#321d5c"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="feather feather-play peer-checked:hidden"
+              className="feather  feather-play peer-checked:hidden"
             >
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
@@ -130,7 +131,7 @@ const Card = () => {
               height={24}
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#321d5c"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -148,16 +149,21 @@ const Card = () => {
               height={24}
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#321d5c"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="feather feather-skip-forward"
+              className="feather  feather-skip-forward"
             >
               <polygon points="5 4 15 12 5 20 5 4" />
               <line x1={19} y1={5} x2={19} y2={19} />
             </svg>
           </div>
+        </div>
+
+        
+        <div className="mt-5" >
+          <WeatherBar/>
         </div>
       </div>
     </div>
