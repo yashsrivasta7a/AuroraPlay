@@ -56,8 +56,8 @@ const Card = () => {
   
       </div>
 
-      <div className="z-30 flex flex-col w-[35rem] h-auto transition-all duration-300 bg-[#6f52a9] shadow-md rounded-2xl shadow-[#664e97] py-6 px-6 ">
-        <div className="flex justify-center w-full mb-4">
+      <div className="z-30 flex flex-col w-[35rem] h-auto transition-all duration-300  bg-gradient-to-t from-[#362853] to-[#9b72cf]  shadow-md rounded-2xl shadow-[#664e97] py-6 px-6 ">
+        <div className="flex justify-center w-full m-2">
           <BlurText
             text="AURORA PLAY!"
             delay={150}
@@ -66,8 +66,6 @@ const Card = () => {
             className="text-6xl text-[#321d5c] font-extrabold font-boldonse drop-shadow-[0_0_5px_rgba(50,29,92,0.5)]"
           />
         </div>
-
-       
 
         {/* <div className="flex flex-row items-center justify-between mx-3 bg-indigo-100 rounded-md min-h-12 py-2 px-4">
           <span className="text-sm text-zinc-600">0:00</span>
@@ -81,89 +79,15 @@ const Card = () => {
           <span className="text-sm text-zinc-600">3:45</span>
         </div> */}
 
-        <div className="flex flex-row items-center justify-center mx-3 space-x-6 mt-2 ">
-
-          <div className="flex items-center justify-center w-12 h-full cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#321d5c"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="feather  feather-skip-back "
-            >
-              <polygon points="19 20 9 12 19 4 19 20" />
-              <line x1={5} y1={19} x2={5} y2={5} />
-            </svg>
-          </div>
-
-          <label
-            htmlFor="playStatus"
-            className="flex items-center justify-center w-12 h-full cursor-pointer"
-          >
-            <input
-              type="checkbox"
-              name="playStatus"
-              id="playStatus"
-              className="hidden peer"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#321d5c"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="feather  feather-play peer-checked:hidden"
-            >
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#321d5c"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="hidden peer-checked:inline-block"
-            >
-              <rect x={6} y={4} width={4} height={16} />
-              <rect x={14} y={4} width={4} height={16} />
-            </svg>
-          </label>
-
-          <div className="flex items-center justify-center w-12 h-full cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#321d5c"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="feather  feather-skip-forward"
-            >
-              <polygon points="5 4 15 12 5 20 5 4" />
-              <line x1={19} y1={5} x2={19} y2={19} />
-            </svg>
-          </div>
-        </div>
-
+   
         
         <div className="mt-5" >
           <WeatherBar/>
+        </div>
+        <div>
+          <button className="bg-green-700 p-3 rounded-3xl mt-2 w-full text-white">
+            Make Spotify Playlist
+          </button>
         </div>
       </div>
     </div>

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import styled from "styled-components";
+import WeatherApi from "../Api's/WeatherApi";
+
+export const CityContext = createContext();
 
 const Loader = () => {
   return (
     <StyledWrapper>
       <ul className="wave-menu">
-        <li />
         <li />
         <li />
         <li />
@@ -140,24 +142,29 @@ const StyledWrapper = styled.div`
 `;
 
 function WeatherBar() {
-  const [val, setVal] = useState("");
+  const [city, setCity] = useState("");
+  const [submittedCity, setSubmittedCity] = useState(""); 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    setSubmittedCity(city); 
   };
 
   return (
-    <div className="flex gap-5 text-3xl text-white bg-[#321d5c] p-3 rounded-3xl">
+    <CityContext.Provider value={submittedCity}>
+    <div className="flex gap-5 text-3xl text-black  bg-[#321d5c] p-3 rounded-3xl">
       <Loader />
       <form onSubmit={onSubmitHandler}>
         <input
           type="text"
           placeholder="ENTER YOUR CITY BUD"
-          value={val}
-          onChange = {(e) => setVal(e.target.value)}
-          className=" w-60 rounded-xl mt-1 placeholder:text-center text-sm p-2 placeholder:text-[#6f52a9]"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          className=" w-60 rounded-xl mt-1 text-center font-semibold placeholder:text-center text-sm p-2 placeholder:text-[#6f52a9]"
         />
+      <WeatherApi/>
       </form>
     </div>
+    </CityContext.Provider>
   );
 }
 

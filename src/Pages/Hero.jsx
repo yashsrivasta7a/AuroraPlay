@@ -4,9 +4,6 @@ import SplashCursor from "../Components/SplashCursor";
 import BlurText from "../Components/BlurText";
 import WeatherBar from "../Components/WeatherBar";
 
-const handleAnimationComplete = () => {
-  console.log("Animation completed!");
-};
 
 function Hero() {
   return (
