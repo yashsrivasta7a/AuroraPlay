@@ -10,7 +10,6 @@ function Hero() {
     <div className="flex justify-center items-center h-screen bg-[#0a0316]">
       <div className="w-[80vw] h-[80vh] flex flex-col justify-center items-center rounded-2xl z-10 bg-transparent">
         <Card />
-        
       </div>
       <div className="z-0">
         <SplashCursor />
