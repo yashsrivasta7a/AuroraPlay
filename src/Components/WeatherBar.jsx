@@ -165,7 +165,13 @@ function WeatherBar() {
             />
           </form>
         </div>
+        <div>
+          <button onClick={onSubmitHandler} className="bg-slate-400 p-3 rounded-3xl mt-2 w-full text-gren-700 font-semibold">
+            Get Tracks
+          </button>
+        </div>
         <GeminiApi /> 
+
       </WeatherApi>
       
     </CityContext.Provider>

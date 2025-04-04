@@ -3,6 +3,7 @@ import Card from "../Components/Card";
 import SplashCursor from "../Components/SplashCursor";
 import BlurText from "../Components/BlurText";
 import WeatherBar from "../Components/WeatherBar";
+import Squares from "../Components/Squares";
 
 
 function Hero() {
@@ -14,6 +15,7 @@ function Hero() {
       <div className="z-0">
         <SplashCursor />
       </div>
+     
     </div>
   );
 }

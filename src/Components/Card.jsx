@@ -84,11 +84,7 @@ const Card = () => {
         <div className="mt-5" >
           <WeatherBar/>
         </div>
-        <div>
-          <button className="bg-green-700 p-3 rounded-3xl mt-2 w-full text-white">
-            Make Spotify Playlist
-          </button>
-        </div>
+        
       </div>
     </div>
   );
