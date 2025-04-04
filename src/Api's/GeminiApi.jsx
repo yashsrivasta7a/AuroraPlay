@@ -6,11 +6,11 @@ import { WeatherContext } from "./WeatherApi";
 import { TrackContext } from "./trackContext";
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyBoFGWAfA9i9pn_9cT1_ZPbrZfManQlFK8",
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
 });
 
-const CLIENT_ID = process.env.VITE_SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.VITE_SPOTIFY_CLIENT_SECRET;
+const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
 function GeminiApi() {
   const { setTracks } = useContext(TrackContext);
