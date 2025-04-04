@@ -11,9 +11,7 @@ const Card = () => {
           viewBox="0 0 128 128"
           width={328}
           height={328}
-          viewBox="0 0 128 128"
-          className="duration-500 border-4 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] border-white border-spacing-5 animate-[spin_5s_linear_infinite] transition-all"
-        >
+          >
           <rect width={128} height={128} fill="black" />
           <circle cx={20} cy={20} r={2} fill="white" />
           <circle cx={40} cy={30} r={2} fill="white" />

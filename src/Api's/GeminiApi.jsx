@@ -9,8 +9,8 @@ const ai = new GoogleGenAI({
   apiKey: "AIzaSyBoFGWAfA9i9pn_9cT1_ZPbrZfManQlFK8",
 });
 
-const CLIENT_ID = "1a8d8b0640d34c21bdae823cad4e0a07";
-const CLIENT_SECRET = "ecd16fd2b2ff47c6a129d872a0df9f01";
+const CLIENT_ID = process.env.VITE_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.VITE_SPOTIFY_CLIENT_SECRET;
 
 function GeminiApi() {
   const { setTracks } = useContext(TrackContext);

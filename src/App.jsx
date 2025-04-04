@@ -11,11 +11,12 @@ function App() {
   return (
   <TrackContext.Provider value={{ tracks, setTracks }}> 
     <div>
+     
       <Hero/>
       <Second/>
       <Footer/>
       
-      <div  className="absolute top-0 left-0 w-full h-full pointer-events-none z-1 opacity-15">
+      <div  className="absolute top-0 left-0 w-full h-full pointer-events-none z-1 opacity-15 ">
         <Squares
             speed={0.5}
             squareSize={60}

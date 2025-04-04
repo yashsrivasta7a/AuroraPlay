@@ -173,7 +173,7 @@ function WeatherBar() {
         <div className="mt-4">
           <button
             onClick={handleScroll}
-            className="bg-slate-400 p-3 rounded-3xl w-full text-white font-semibold hover:bg-slate-500 transition-colors"
+            className="bg-[#6f52a9] p-3 rounded-3xl w-full text-white font-semibold hover:bg-[#372261] transition-colors"
           >
             Get Tracks
           </button>

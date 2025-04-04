@@ -56,7 +56,7 @@ function Second() {
         </div>
         <div className="z-30 top-14 flex relative flex-col w-full h-fit transition-all duration-300 bg-gradient-to-t from-[#392b55] to-[#9b72cf] shadow-md rounded-2xl shadow-[#664e97] py-6 px-6">
           <h1 className="text-center font-bold p-3 font-boldonse text-3xl md:text-5xl text-[#362853]">
-            SPOTIFY TRACKS  
+            YOUR TRACKS  
           </h1>
           <ul className="mt-8 text-start text-[#8766ca] text-xs p-3 font-semibold grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
   {tracks.length > 0 ? (
