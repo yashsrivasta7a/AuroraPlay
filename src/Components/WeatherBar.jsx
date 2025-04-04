@@ -2,22 +2,17 @@ import React, { createContext, useState } from "react";
 import styled from "styled-components";
 import WeatherApi from "../Api's/WeatherApi";
 import GeminiApi from "../Api's/GeminiApi";
+import { useRef } from "react";
+
 export const CityContext = createContext();
 
 const Loader = () => {
   return (
     <StyledWrapper>
       <ul className="wave-menu">
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
+        {Array.from({ length: 10 }).map((_, index) => (
+          <li key={index} />
+        ))}
       </ul>
     </StyledWrapper>
   );
@@ -27,8 +22,8 @@ const StyledWrapper = styled.div`
   .wave-menu {
     border: 4px solid #6f52a9;
     border-radius: 50px;
-    width: 200px;
-    height: 45px;
+    width: 160px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,12 +37,11 @@ const StyledWrapper = styled.div`
 
   .wave-menu li {
     list-style: none;
-    height: 30px;
-    width: 4px;
+    height: 25px;
+    width: 3px;
     border-radius: 10px;
     background: #6f52a9;
-    margin: 0 6px;
-    padding: 0;
+    margin: 0 4px;
     animation-name: wave1;
     animation-duration: 0.3s;
     animation-iteration-count: infinite;
@@ -77,7 +71,7 @@ const StyledWrapper = styled.div`
   .wave-menu li:nth-child(4) {
     animation-name: wave4;
     animation-delay: 0.1s;
-    animation-duration: 13s;
+    animation-duration: 1.3s;
   }
 
   .wave-menu li:nth-child(5) {
@@ -104,7 +98,6 @@ const StyledWrapper = styled.div`
     from {
       transform: scaleY(1);
     }
-
     to {
       transform: scaleY(0.5);
     }
@@ -114,7 +107,6 @@ const StyledWrapper = styled.div`
     from {
       transform: scaleY(0.3);
     }
-
     to {
       transform: scaleY(0.6);
     }
@@ -124,7 +116,6 @@ const StyledWrapper = styled.div`
     from {
       transform: scaleY(0.6);
     }
-
     to {
       transform: scaleY(0.8);
     }
@@ -134,7 +125,6 @@ const StyledWrapper = styled.div`
     from {
       transform: scaleY(0.2);
     }
-
     to {
       transform: scaleY(0.5);
     }
@@ -143,37 +133,54 @@ const StyledWrapper = styled.div`
 
 function WeatherBar() {
   const [city, setCity] = useState("");
-  const [submittedCity, setSubmittedCity] = useState(""); 
-  
+  const [submittedCity, setSubmittedCity] = useState("");
+  const handleScroll = (e) => {
+    e.preventDefault();
+    setSubmittedCity(city);
+    const secondSection = document.getElementById("second-section");
+    if (secondSection) {
+      secondSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    setSubmittedCity(city); 
+    setSubmittedCity(city);
   };
 
   return (
     <CityContext.Provider value={submittedCity}>
       <WeatherApi>
-        <div className="flex gap-5 text-3xl text-black bg-[#321d5c] p-3 rounded-3xl">
-          <Loader />
-          <form onSubmit={onSubmitHandler}>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 bg-[#321d5c] p-4 sm:p-3 rounded-3xl w-full">
+          <div className="flex justify-center sm:justify-start">
+            <Loader />
+          </div>
+
+          <form
+            onSubmit={onSubmitHandler}
+            className="w-full sm:w-auto flex justify-center"
+          >
             <input
               type="text"
               placeholder="ENTER YOUR CITY BUD"
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              className="w-60 rounded-xl mt-1 text-center font-semibold placeholder:text-center text-sm p-2 placeholder:text-[#6f52a9]"
+              className="w-full lg:w-72 sm:w-64 rounded-xl text-center font-semibold placeholder:text-center text-sm p-2 placeholder:text-[#6f52a9]"
             />
           </form>
         </div>
-        <div>
-          <button onClick={onSubmitHandler} className="bg-slate-400 p-3 rounded-3xl mt-2 w-full text-gren-700 font-semibold">
+
+        <div className="mt-4">
+          <button
+            onClick={handleScroll}
+            className="bg-slate-400 p-3 rounded-3xl w-full text-white font-semibold hover:bg-slate-500 transition-colors"
+          >
             Get Tracks
           </button>
         </div>
-        <GeminiApi /> 
 
+        <GeminiApi />
       </WeatherApi>
-      
     </CityContext.Provider>
   );
 }

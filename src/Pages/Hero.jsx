@@ -12,9 +12,9 @@ function Hero() {
       <div className="w-[80vw] h-[80vh] flex flex-col justify-center items-center rounded-2xl z-10 bg-transparent">
         <Card />
       </div>
-      <div className="z-0">
+      {/* <div className="z-0">
         <SplashCursor />
-      </div>
+      </div> */}
      
     </div>
   );

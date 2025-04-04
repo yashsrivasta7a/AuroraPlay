@@ -6,8 +6,9 @@ import WeatherBar from "./WeatherBar";
 const Card = () => {
   return (
     <div className="flex flex-col items-center select-none py-6 px-8">
-      <div className="relative h-32 -mb-4 transition-all duration-200 z-20">
-        <svg
+      <div className="relative h-32 sm: -mb-4 transition-all duration-200 z-20">
+        <svg   className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 duration-500 border-4 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] border-white animate-[spin_5s_linear_infinite] transition-all"
+          viewBox="0 0 128 128"
           width={328}
           height={328}
           viewBox="0 0 128 128"
@@ -56,14 +57,14 @@ const Card = () => {
   
       </div>
 
-      <div className="z-30 flex flex-col w-[35rem] h-auto transition-all duration-300  bg-gradient-to-t from-[#362853] to-[#9b72cf]  shadow-md rounded-2xl shadow-[#664e97] py-6 px-6 ">
+      <div className="z-30 flex flex-col overflow-hidden  sm:max-w-md md:max-w-[35rem] h-auto transition-all duration-300  bg-gradient-to-t from-[#362853] to-[#9b72cf]  shadow-md rounded-2xl shadow-[#664e97] py-6 px-6 ">
         <div className="flex justify-center w-full m-2">
           <BlurText
             text="AURORA PLAY!"
             delay={150}
             animateBy="words"
             direction="top"
-            className="text-6xl text-[#321d5c] font-extrabold font-boldonse drop-shadow-[0_0_5px_rgba(50,29,92,0.5)]"
+            className="sm:text-4xl md:text-6xl text-[#321d5c] font-extrabold font-boldonse drop-shadow-[0_0_5px_rgba(50,29,92,0.5)]"
           />
         </div>
 

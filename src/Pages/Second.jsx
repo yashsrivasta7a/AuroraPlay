@@ -13,8 +13,8 @@ function Second() {
   const { tracks } = useContext(TrackContext);
   return (
     <div>
-      <div className="flex justify-evenly h-screen bg-[#0a0316] ">
-      <div className="relative w-screen h-screen overflow-hidden">
+      <div id="second-section" className="flex flex-col md:flex-row justify-evenly h-screen bg-[#0a0316] ">
+        <div className="relative w-full h-screen overflow-hidden hidden md:block">
           <div className="absolute left-[-25rem] top-1/2 transform -translate-y-1/2">
             <svg
               width={628}
@@ -54,11 +54,11 @@ function Second() {
             </svg>
           </div>
         </div>
-        <div className="z-30 top-14 flex relative flex-col w-full h-fit transition-all duration-300  bg-gradient-to-t from-[#392b55] to-[#9b72cf]  shadow-md rounded-2xl shadow-[#664e97] py-6 px-6 ">
-          <h1 className="text-center font-bold p-3 font-boldonse text-5xl text-[#362853]  ">
+        <div className="z-30 top-14 flex relative flex-col w-full h-fit transition-all duration-300 bg-gradient-to-t from-[#392b55] to-[#9b72cf] shadow-md rounded-2xl shadow-[#664e97] py-6 px-6">
+          <h1 className="text-center font-bold p-3 font-boldonse text-3xl md:text-5xl text-[#362853]">
             SPOTIFY TRACKS  
           </h1>
-          <ul className="mt-8 text-start text-[#8766ca] text-xs p-3 font-semibold grid grid-cols-3 gap-4 w-fit">
+          <ul className="mt-8 text-start text-[#8766ca] text-xs p-3 font-semibold grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
   {tracks.length > 0 ? (
     tracks.map((track, index) => (
       <li key={track.id} className="p-3 mb-3 bg-[#311853] hover:bg-[#362853] hover:text-white rounded-xl text-center">
@@ -79,7 +79,7 @@ function Second() {
         <div className="z-0">
           <SplashCursor />
         </div>
-        <div className="absolute right-4 w-full h-full pointer-events-none z-1 opacity-15">
+        <div className="absolute  w-full h-full pointer-events-none z-1 opacity-15">
           <Squares
             speed={0.5}
             squareSize={60}
@@ -88,7 +88,7 @@ function Second() {
             hoverFillColor="#222"
           />
         </div>
-        <div className="relative w-screen h-screen overflow-hidden">
+        <div className="relative w-screen h-screen overflow-hidden md:w-screen hidden md:block">
           <div className="absolute right-[-25rem] top-1/2 transform -translate-y-1/2">
             <svg
               width={628}
