@@ -65,6 +65,7 @@ const Card = () => {
             className="sm:text-4xl md:text-6xl text-[#321d5c] font-extrabold font-boldonse drop-shadow-[0_0_5px_rgba(50,29,92,0.5)]"
           />
         </div>
+        
 
         {/* <div className="flex flex-row items-center justify-between mx-3 bg-indigo-100 rounded-md min-h-12 py-2 px-4">
           <span className="text-sm text-zinc-600">0:00</span>
@@ -83,7 +84,11 @@ const Card = () => {
         <div className="mt-5" >
           <WeatherBar/>
         </div>
-        
+        <h1 className="text-[#bb8bfa] font-bold justify-center items-center flex mt-5 text-xs shadow-[#664e97] ">
+  
+TURNS WEATHER INTO MUSIC USING AI- TURNING FORECASTS INTO SOUNDTRACKS.
+        </h1>
+
       </div>
     </div>
   );

@@ -7,8 +7,23 @@ import { useRef } from "react";
 export const CityContext = createContext();
 
 const Loader = () => {
+  const audioRef = useRef(new Audio('src/song/amari.mp3'));
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleTunes = () => {
+    const audio = audioRef.current;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <StyledWrapper>
+    <StyledWrapper className={isPlaying ? 'playing' : 'paused'} onClick={handleTunes}>
       <ul className="wave-menu">
         {Array.from({ length: 10 }).map((_, index) => (
           <li key={index} />
@@ -30,107 +45,75 @@ const StyledWrapper = styled.div`
     padding: 0;
     margin: 0;
     cursor: pointer;
-    transition: ease 0.2s;
-    position: relative;
+    transition: background 0.2s ease;
+  }
+
+  /* Background colors based on state */
+  &.playing .wave-menu {
+    background: #6f52a9;
+  }
+
+  &.paused .wave-menu {
     background: #fff;
   }
 
   .wave-menu li {
     list-style: none;
-    height: 25px;
     width: 3px;
     border-radius: 10px;
-    background: #6f52a9;
     margin: 0 4px;
-    animation-name: wave1;
+    transition: height 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  }
+
+  /* Paused State - Purple Bars, Still */
+  &.paused .wave-menu li {
+    height: 10px;
+    background: #6f52a9;
+    animation: none;
+  }
+
+  /* Playing State - White Bars, Animated */
+  &.playing .wave-menu li {
+    height: 25px;
+    background: #fff;
     animation-duration: 0.3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    transition: ease 0.2s;
+    animation-play-state: running;
   }
 
-  .wave-menu:hover > li {
-    background: #fff;
-  }
-
-  .wave-menu:hover {
-    background: #6f52a9;
-  }
-
-  .wave-menu li:nth-child(2) {
-    animation-name: wave2;
-    animation-delay: 1s;
-  }
-
-  .wave-menu li:nth-child(3) {
-    animation-name: wave3;
-    animation-delay: 0.23s;
-    animation-duration: 1s;
-  }
-
-  .wave-menu li:nth-child(4) {
-    animation-name: wave4;
-    animation-delay: 0.1s;
-    animation-duration: 1.3s;
-  }
-
-  .wave-menu li:nth-child(5) {
-    animation-delay: 1s;
-  }
-
-  .wave-menu li:nth-child(6) {
-    animation-name: wave2;
-    animation-duration: 1s;
-  }
-
-  .wave-menu li:nth-child(8) {
-    animation-name: wave4;
-    animation-delay: 0.4s;
-    animation-duration: 1s;
-  }
-
-  .wave-menu li:nth-child(9) {
-    animation-name: wave3;
-    animation-delay: 0.15s;
-  }
+  /* Animations assigned */
+  &.playing .wave-menu li:nth-child(1) { animation-name: wave1; }
+  &.playing .wave-menu li:nth-child(2) { animation-name: wave2; animation-delay: 0.2s; }
+  &.playing .wave-menu li:nth-child(3) { animation-name: wave3; animation-delay: 0.3s; }
+  &.playing .wave-menu li:nth-child(4) { animation-name: wave4; animation-delay: 0.1s; }
+  &.playing .wave-menu li:nth-child(5) { animation-name: wave2; animation-delay: 0.4s; }
+  &.playing .wave-menu li:nth-child(6) { animation-name: wave3; animation-delay: 0.2s; }
+  &.playing .wave-menu li:nth-child(7) { animation-name: wave1; animation-delay: 0.3s; }
+  &.playing .wave-menu li:nth-child(8) { animation-name: wave4; animation-delay: 0.1s; }
+  &.playing .wave-menu li:nth-child(9) { animation-name: wave2; animation-delay: 0.4s; }
+  &.playing .wave-menu li:nth-child(10) { animation-name: wave3; animation-delay: 0.2s; }
 
   @keyframes wave1 {
-    from {
-      transform: scaleY(1);
-    }
-    to {
-      transform: scaleY(0.5);
-    }
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.4); }
   }
 
   @keyframes wave2 {
-    from {
-      transform: scaleY(0.3);
-    }
-    to {
-      transform: scaleY(0.6);
-    }
+    from { transform: scaleY(0.6); }
+    to { transform: scaleY(1); }
   }
 
   @keyframes wave3 {
-    from {
-      transform: scaleY(0.6);
-    }
-    to {
-      transform: scaleY(0.8);
-    }
+    from { transform: scaleY(0.4); }
+    to { transform: scaleY(0.9); }
   }
 
   @keyframes wave4 {
-    from {
-      transform: scaleY(0.2);
-    }
-    to {
-      transform: scaleY(0.5);
-    }
+    from { transform: scaleY(0.7); }
+    to { transform: scaleY(1.2); }
   }
 `;
-
 function WeatherBar() {
   const [city, setCity] = useState("");
   const [submittedCity, setSubmittedCity] = useState("");

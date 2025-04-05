@@ -29,6 +29,7 @@ function GeminiApi() {
 Match the songs to the mood of the weather . Include songs that are currently popular or trending in ${city} and avoid any songs that are not available on Spotify.
 Include songs according to the current season and time of day, and consider the local culture and music scene.
 make sure to include 3 out 6 song in the regional language of ${city} .
+i cant give you actually weather so suggsest song according to weather too.
 Avoid generic or overused tracks and prioritize ones that reflect the current vibe in ${city}. 
 Return only the song names, without artist names, in a comma-separated format.
 
