@@ -1,9 +1,29 @@
-​Aurora Play is a project you developed that recommends songs based on the current weather conditions. By integrating real-time meteorological data, the application curates personalized playlists that align with the user's environment.​
+# 🌌 Aurora Play
 
-Key Features of Aurora Play:
+**Aurora Play** is a weather-based music recommendation web app that curates playlists to match your current weather and mood. Whether it's raining, sunny, or cloudy, Aurora Play sets the perfect soundtrack for your vibe.  
 
-Real-Time Weather Integration: Utilizes APIs to fetch up-to-date weather information, ensuring that song recommendations reflect the current atmospheric conditions.​
+Built using the **OpenWeather API** for real-time weather data and the **Spotify API** for personalized song recommendations.
 
-Personalized Music Curation: Analyzes weather parameters such as temperature, humidity, and precipitation to select songs that match the mood associated with the weather.​
+---
 
-User-Centric Design: Offers an intuitive interface where users can effortlessly receive music suggestions tailored to their local weather.
+## 🎯 Features
+
+- 🌦️ **Real-Time Weather Detection**  
+  Automatically fetches your local weather using OpenWeather API.
+
+- 🎵 **Dynamic Music Suggestions**  
+  Curates Spotify tracks/playlists based on current weather conditions.
+
+- 🌍 **Location-Based Experience**  
+  Works anywhere — just grant location access and let the music match the skies.
+
+- 💻 **Sleek & Responsive UI**  
+  Built with a clean, modern interface for an enjoyable user experience.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS  
+- **APIs:** OpenWeatherMap API, Spotify Web API , Gemini API
+- **Deployment:** Vercel 
