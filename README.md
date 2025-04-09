@@ -1,12 +1,29 @@
-# React + Vite
+# 🌌 Aurora Play
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Aurora Play** is a weather-based music recommendation web app that curates playlists to match your current weather and mood. Whether it's raining, sunny, or cloudy, Aurora Play sets the perfect soundtrack for your vibe.  
 
-Currently, two official plugins are available:
+Built using the **OpenWeather API** for real-time weather data and the **Spotify API** for personalized song recommendations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎯 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌦️ **Real-Time Weather Detection**  
+  Automatically fetches your local weather using OpenWeather API.
+
+- 🎵 **Dynamic Music Suggestions**  
+  Curates Spotify tracks/playlists based on current weather conditions.
+
+- 🌍 **Location-Based Experience**  
+  Works anywhere — just grant location access and let the music match the skies.
+
+- 💻 **Sleek & Responsive UI**  
+  Built with a clean, modern interface for an enjoyable user experience.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS  
+- **APIs:** OpenWeatherMap API, Spotify Web API , Gemini API
+- **Deployment:** Vercel 
