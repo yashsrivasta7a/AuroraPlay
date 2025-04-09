@@ -10,7 +10,7 @@ import SocialLinks from '../Components/SocialLinks';
 function Hero() {
   return (
     <div className="flex justify-center h-screen items-center  bg-[#0a0316]">
-      <div className="w-[80vw] h-[80vh] flex flex-col justify-center items-center rounded-2xl z-10 bg-transparent">
+      <div className="w-[80vw] h-[80vh] flex mt-14 flex-col justify-center items-center rounded-2xl z-10 bg-transparent">
         <Card />
       <SocialLinks/>
       </div>
