@@ -24,6 +24,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("about")}
             className="hover:text-[#bb8bfa] transition duration-300"
           >
+            
             About
           </button>
         </li>
