@@ -7,7 +7,7 @@ import { useRef } from "react";
 export const CityContext = createContext();
 
 const Loader = () => {
-  const audioRef = useRef(new Audio('src/song/amari.mp3'));
+  const audioRef = useRef(new Audio('public/amari.mp3'));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTunes = () => {
@@ -117,6 +117,8 @@ const StyledWrapper = styled.div`
 function WeatherBar() {
   const [city, setCity] = useState("");
   const [submittedCity, setSubmittedCity] = useState("");
+
+  
   const handleScroll = (e) => {
     e.preventDefault();
     setSubmittedCity(city);

@@ -16,24 +16,24 @@ function About() {
         </h1>
 
         <div className="mt-6 text-center text-[#d1b3f5] text-base md:text-lg leading-relaxed space-y-6">
-          <p className="flex items-center justify-center gap-2">
-            <FaCloud className="text-[#ffffff] text-xl" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <FaCloud className="text-[#ffffff] text-2xl sm:text-xl" />
             <span>
               Transform weather data into <span className="font-bold text-[#ffffff]">beautiful melodies</span>.
             </span>
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <FaMusic className="text-[#ffffff] text-xl" />
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <FaMusic className="text-[#ffffff] text-2xl sm:text-xl" />
             <span>
               Experience a <span className="font-bold text-[#ffffff]">unique soundtrack</span> for your day.
             </span>
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <FaMagic className="text-[#ffffff] text-xl" />
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <FaMagic className="text-[#ffffff] text-2xl sm:text-xl" />
             <span>
               Powered by <span className="font-bold text-[#ffffff]">AI</span>, blending creativity and technology.
             </span>
-          </p>
+          </div>
         </div>
 
         <div className="mt-10 flex flex-col items-center">
@@ -53,14 +53,14 @@ function About() {
         </div>
       </div>
       <div className="absolute  w-full h-full pointer-events-none z-1 opacity-15">
-            <Squares
-              speed={0.5}
-              squareSize={60}
-              direction="diagonal"
-              borderColor="#ccc"
-              hoverFillColor="#888"
-            />
-          </div>
+        <Squares
+          speed={0.5}
+          squareSize={60}
+          direction="diagonal"
+          borderColor="#ccc"
+          hoverFillColor="#888"
+        />
+      </div>
     </div>
   );
 }
