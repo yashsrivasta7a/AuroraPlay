@@ -6,7 +6,7 @@ import WeatherBar from "./WeatherBar";
 const Card = () => {
   return (
     <div className="flex flex-col items-center select-none py-6 px-8">
-      <div className="relative h-32 sm: -mb-4 transition-all duration-200 z-20">
+      <div className="relative h-28 sm: -mb-4 transition-all duration-200 z-20">
         <svg   className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 duration-500 border-4 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] border-white animate-[spin_5s_linear_infinite] transition-all"
           viewBox="0 0 128 128"
           width={328}
