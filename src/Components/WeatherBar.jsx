@@ -7,7 +7,7 @@ import { useRef } from "react";
 export const CityContext = createContext();
 
 const Loader = () => {
-  const audioRef = useRef(new Audio('public/amari.mp3'));
+  const audioRef = useRef(new Audio('/amari.mp3'));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTunes = () => {
