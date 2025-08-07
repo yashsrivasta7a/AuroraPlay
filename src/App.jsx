@@ -7,7 +7,7 @@ import Footer from "./Pages/Footer";
 import { TrackContext } from "./Api's/trackContext";
 import Squares from "./Components/Squares";
 import Navbar from "./Components/Navbar";
-
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   const [tracks, setTracks] = useState([]);
   return (
@@ -36,6 +36,7 @@ function App() {
           </div>
         </div>
       </Router>
+         <Analytics />
     </TrackContext.Provider>
   );
 }
