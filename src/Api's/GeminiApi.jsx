@@ -22,10 +22,19 @@ function GeminiApi() {
 
     async function fetchData() {
       try {
-        const prompt = `You are a highly knowledgeable music curator specializing in personalized playlists. Suggest exactly 6 unique Spotify song titles that perfectly match the current weather condition "${weather}" and temperature "${temperature}°C" in the city of ${city}. 
-Consider the mood, atmosphere, and cultural context associated with the weather and time of day. Include songs that are currently popular or trending specifically in ${city}, as well as timeless tracks that resonate locally. 
-Ensure that 3 out of the 6 songs are in the predominant regional language of ${city}, reflecting authentic local music culture. Prioritize diversity in genres and avoid generic, overplayed, or clichéd tracks.
-Exclude any songs that are not available on Spotify. Return only the song titles, separated by commas, with no artist names, explanations, or extra formatting.Format the output strictly as: Song Name 1, Song Name 2, Song Name 3, Song Name 4, Song Name 5, Song Name 6.`;
+        const prompt = `You are an expert music curator specializing in hyper-personalized Spotify playlists. Suggest exactly 6 unique Spotify song titles that perfectly reflect the current weather condition "${weather}" and temperature "${temperature}°C" in the city of ${city}. 
+Carefully consider the mood, atmosphere, time of day, and cultural context of ${city} when selecting the songs. Blend trending hits currently popular in ${city} with timeless local favorites, ensuring cultural authenticity. 
+Exactly 3 out of the 6 songs must be in the predominant regional language of ${city}, representing its local music scene and identity. Diversity of genres is essential—avoid mainstream clichés, overplayed anthems, or generic filler. Prioritize songs that evoke emotion and enhance the listener’s connection with the moment. Verify that all chosen tracks are available on Spotify. 
+
+Before producing the final answer, think step by step about the following (but do not reveal this reasoning to the user): 
+1. Analyze cultural and linguistic context of ${city}. 
+2. Map the weather condition "${weather}" and temperature "${temperature}°C" to moods, genres, or themes. 
+3. Identify currently trending local tracks and timeless regional classics. 
+4. Ensure 3 songs are in the regional language and 3 are in wider/global languages for balance. 
+5. Cross-check diversity of genres and moods, avoiding anything too generic. 
+6. Select final 6 songs that best fit the listener’s context. 
+
+Return only the song titles, separated by commas, with no artist names, explanations, numbers, or extra formatting. Strictly format the output as: Song Name 1, Song Name 2, Song Name 3, Song Name 4, Song Name 5, Song Name 6.`;
 
         const response = await axios.post(
           `${AZURE_OPENAI_ENDPOINT}/openai/deployments/${AZURE_OPENAI_DEPLOYMENT_ID}/chat/completions?api-version=2024-12-01-preview`,
